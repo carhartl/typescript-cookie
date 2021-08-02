@@ -39,7 +39,7 @@
   "author": "Klaus Hartl",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.2.3",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@types/jest": "^26.0.24",
     "eslint": "^7.30.0",
     "eslint-config-standard": "^16.0.3",
