@@ -45,7 +45,7 @@
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-markdown": "^2.2.0",
-    "http-server": "^13.0.0",
+    "http-server": "^13.0.1",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "release-it": "^14.11.5",
