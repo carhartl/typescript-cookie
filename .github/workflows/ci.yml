@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: '16.x'
       - run: npm ci
-      - uses: paambaati/codeclimate-action@84cea27117a473d605400ca3a97fcef7e433e2d6
+      - uses: paambaati/codeclimate-action@93c6213edc13fcb74a684a39a32956ebf417dd1c
         env:
           CC_TEST_REPORTER_ID: cbe1ba43d6de77501997cd85b35dec2002f3a06db28fe46bc6ed10bc3d613111
         with:
