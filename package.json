@@ -57,7 +57,7 @@
     "jest": "^27.1.0",
     "prettier": "^2.3.2",
     "release-it": "^15.0.0",
-    "rollup": "^2.56.2",
+    "rollup": "^3.17.2",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-license": "^3.0.0",
     "selenium-webdriver": "^4.0.0-beta.4",
