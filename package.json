@@ -9,10 +9,12 @@
   "jsdelivr": "dist/typescript-cookie.min.mjs",
   "exports": {
     ".": {
+      "types": "./dist/src/index.d.ts",
       "import": "./dist/typescript-cookie.mjs"
     },
     "./package.json": "./package.json"
   },
+  "types": "./dist/src/index.d.ts",
   "keywords": [
     "browser",
     "client-side",
@@ -44,7 +46,6 @@
     "index.js",
     "dist/**/*"
   ],
-  "types": "./dist/src/index.d.ts",
   "devDependencies": {
     "@playwright/test": "^1.31.0",
     "@rollup/plugin-terser": "^0.4.0",
