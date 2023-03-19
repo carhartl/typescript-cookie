@@ -13,9 +13,6 @@ A simple, lightweight TypeScript API for handling cookies.
 - Think: [js-cookie](https://github.com/js-cookie/js-cookie) 4.0
 - **< 750 bytes** gzipped!
 
-**👉👉 If you're viewing this at https://github.com/carhartl/typescript-cookie, you're reading the documentation for the master branch.
-[View documentation for the latest release.](https://github.com/carhartl/typescript-cookie/tree/latest#readme) 👈👈**
-
 ## Installation
 
 ### NPM
