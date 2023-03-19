@@ -1,7 +1,7 @@
 {
   "git": {
     "commitArgs": ["-S"],
-    "commitMessage": "Prepare for v${version} release",
+    "commitMessage": "Craft v${version} release",
     "requireCleanWorkingDir": true,
     "tagAnnotation": "Release v${version}",
     "tagArgs": ["-s"],
