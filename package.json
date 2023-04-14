@@ -4,13 +4,15 @@
   "description": "A simple, lightweight API for handling cookies in the browser",
   "author": "Klaus Hartl",
   "license": "MIT",
+  "main": "dist/typescript-cookie.cjs",
   "module": "dist/typescript-cookie.mjs",
   "unpkg": "dist/typescript-cookie.min.mjs",
   "jsdelivr": "dist/typescript-cookie.min.mjs",
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
-      "import": "./dist/typescript-cookie.mjs"
+      "import": "./dist/typescript-cookie.mjs",
+      "require": "./dist/typescript-cookie.cjs"
     },
     "./package.json": "./package.json"
   },

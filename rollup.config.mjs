@@ -21,6 +21,16 @@ export default [
     input: 'src/index.ts',
     output: [
       {
+        file: pkg.main,
+        format: 'cjs'
+      }
+    ],
+    plugins: [typescript(), licenseBanner]
+  },
+  {
+    input: 'src/index.ts',
+    output: [
+      {
         file: pkg.module,
         format: 'esm'
       }
