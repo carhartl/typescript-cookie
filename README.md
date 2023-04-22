@@ -233,19 +233,7 @@ $ npm test -- --watch
 
 ## Releasing
 
-We are using [release-it](https://www.npmjs.com/package/release-it) for automated releasing.
+Releasing should be done via the `Release` GitHub Actions workflow, so that published packages on npmjs.com have package provenance.
 
-Start a dry run to see what would happen:
-
-```
-$ npm run release minor -- --dry-run
-```
-
-Do a real release (publishes both to npm as well as create a new release on GitHub):
-
-```
-$ npm run release minor
-```
-
-_GitHub releases are created as a draft and need to be published manually!
-(This is so we are able to craft suitable release notes before publishing.)_
+GitHub releases are created as a draft and need to be published manually!
+(This is so we are able to craft suitable release notes before publishing.)
