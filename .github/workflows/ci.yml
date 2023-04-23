@@ -45,7 +45,7 @@ jobs:
           coverageCommand: npm run coverage
 
   e2e:
-    name: Run end-to-end tests
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
