@@ -209,16 +209,6 @@ const write: Encoder<string> = (value) => value.toUpperCase()
 setCookie('uppercased', 'foo', undefined, write) // => 'uppercased=FOO; path=/'
 ```
 
-## js-cookie compatibility
-
-To ease migration while getting full TypeScript support there's a compat module that provides an api similar to [js-cookie](https://github.com/js-cookie/js-cookie):
-
-```typescript
-import { Cookies } from 'typescript-cookie'
-
-Cookies.get('name')
-```
-
 ## Testing
 
 ```

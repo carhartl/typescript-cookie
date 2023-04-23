@@ -8,4 +8,3 @@ export {
   removeCookie,
   setCookie
 } from './api'
-export { default as Cookies } from './compat'
