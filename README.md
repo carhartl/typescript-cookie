@@ -17,8 +17,8 @@ A simple, lightweight TypeScript API for handling cookies.
 
 ### NPM
 
-```
-$ npm i typescript-cookie
+```bash
+npm i typescript-cookie
 ```
 
 ## Basic Usage
