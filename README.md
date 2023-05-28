@@ -17,8 +17,8 @@ A simple, lightweight TypeScript API for handling cookies.
 
 ### NPM
 
-```
-$ npm i typescript-cookie
+```bash
+npm i typescript-cookie
 ```
 
 ## Basic Usage
@@ -211,14 +211,14 @@ setCookie('uppercased', 'foo', undefined, write) // => 'uppercased=FOO; path=/'
 
 ## Testing
 
-```
-$ npm test
+```bash
+npm test
 ```
 
 Run tests continuously:
 
-```
-$ npm test -- --watch
+```bash
+npm test -- --watch
 ```
 
 ## Releasing
