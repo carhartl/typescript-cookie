@@ -2,7 +2,7 @@
 
 import { decodeName, decodeValue, encodeName, encodeValue } from '../src/codec'
 
-const NAME_DISALLOWED_CHARS_INPUT_OUTPUT: any = {
+const NAME_DISALLOWED_CHARS_INPUT_OUTPUT: { [key: string]: string } = {
   '(': '%28',
   ')': '%29',
   '<': '%3C',
@@ -24,7 +24,7 @@ const NAME_DISALLOWED_CHARS_INPUT_OUTPUT: any = {
   '\t': '%09'
 }
 
-const VALUE_DISALLOWED_CHARS_INPUT_OUTPUT: any = {
+const VALUE_DISALLOWED_CHARS_INPUT_OUTPUT: { [key: string]: string } = {
   ' ': '%20',
   '"': '%22',
   ',': '%2C',

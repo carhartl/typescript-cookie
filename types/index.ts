@@ -1,11 +1,14 @@
-export interface CookieAttributes {
+export interface WellKnownCookieAttributes {
   path?: string
   domain?: string
   expires?: number | Date
   sameSite?: 'strict' | 'Strict' | 'lax' | 'Lax' | 'none' | 'None'
   secure?: boolean
-  [property: string]: any
 }
+
+export type CookieAttributes =
+  | WellKnownCookieAttributes
+  | { [property: string]: string | undefined }
 
 export type CookieAttributesConfig = Readonly<CookieAttributes>
 

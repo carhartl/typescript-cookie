@@ -13,8 +13,10 @@ import {
   encodeValue as defaultValueEncoder
 } from './codec'
 
+type AsUnionFromInterface<T> = T[keyof T]
+
 function stringifyAttributes(
-  attributes: CookieAttributes & { expires?: any }
+  attributes: CookieAttributes | { expires: string }
 ): string {
   // Copy incoming attributes as to not alter the original object..
   attributes = Object.assign({}, attributes)
@@ -23,12 +25,16 @@ function stringifyAttributes(
     attributes.expires = new Date(Date.now() + attributes.expires * 864e5)
   }
   if (attributes.expires != null) {
-    attributes.expires = attributes.expires.toUTCString()
+    attributes.expires = (attributes.expires as Date).toUTCString()
   }
 
   return (
     Object.entries(attributes)
-      .filter(([key, value]: [string, any]) => value != null && value !== false)
+      .filter(
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        ([key, value]: [string, AsUnionFromInterface<CookieAttributes>]) =>
+          value != null && value !== false
+      )
       // Considers RFC 6265 section 5.2:
       // ...
       // 3.  If the remaining unparsed-attributes contains a %x3B (";")
@@ -53,7 +59,7 @@ function get<T extends string | undefined, U>(
   decodeName: Decoder<string>
 ): GetReturn<T, U> {
   const scan = /(?:^|; )([^=]*)=([^;]*)/g
-  const jar: any = {}
+  const jar: { [property: string]: U } = {}
   let match
   while ((match = scan.exec(document.cookie)) != null) {
     try {
@@ -67,7 +73,7 @@ function get<T extends string | undefined, U>(
     }
   }
 
-  return name != null ? jar[name] : jar
+  return (name != null ? jar[name] : jar) as GetReturn<T, U>
 }
 
 export const DEFAULT_CODEC: CookieCodecConfig<
