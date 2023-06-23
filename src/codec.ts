@@ -6,7 +6,7 @@ export const encodeName: Encoder<string> = (name) =>
     .replace(/[()]/g, escape)
 
 export const encodeValue: Encoder<
-string | number | boolean | undefined | null
+  string | number | boolean | undefined | null
 > = (value) => {
   return encodeURIComponent(value as string).replace(
     /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,

@@ -24,7 +24,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -37,14 +37,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
+      - name: Check formatting
+        run: npm run format:check
       - name: Lint
-        run: npm run lint
+        run: npm run lint:check
       - name: Run unit tests
         run: npm test
 
   coverage:
-    needs: [test]
     runs-on: ubuntu-latest
+    needs:
+      - build
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -62,8 +65,9 @@ jobs:
           coverageCommand: npm run coverage
 
   e2e:
-    needs: [test]
     runs-on: ubuntu-latest
+    needs:
+      - build
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3

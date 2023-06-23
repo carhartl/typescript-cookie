@@ -5,7 +5,7 @@ test.describe('E2E test', () => {
     await page.goto('http://localhost:8099/test/browser.e2e.html')
   })
 
-  test('setting a cookie', async ({ page, context }) => {
+  test('setting a cookie', async ({ context }) => {
     const [cookie] = await context.cookies()
     expect(cookie.name).toBe('test')
     expect(cookie.value).toBe('foo')

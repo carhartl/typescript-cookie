@@ -1,9 +1,15 @@
 {
-  "extends": "standard",
-  "rules": {
-    "no-undef": "off",
-    "no-unused-vars": "off",
-    "space-before-function-paren": "error"
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  "plugins": ["html", "markdown"]
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {}
 }
