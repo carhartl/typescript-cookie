@@ -214,6 +214,13 @@ describe('getCookie', () => {
     document.cookie = 'invalid=foo; expires=Thu, 01 Jan 1970 00:00:00 GMT'
   })
 
+  test('when there is a duplicate cookie', () => {
+    document.cookie = 'c=one; path=/'
+    document.cookie = 'c=two; path=/test'
+    expect(getCookie('c')).toBe('two') // 2nd (nested) cookie comes first...!
+    document.cookie = 'c=v; path=/test; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+  })
+
   describe('decode', () => {
     test('with customized value decoding', () => {
       document.cookie = 'c=v'
@@ -269,6 +276,13 @@ describe('getCookies', () => {
 
   test('when there are no cookies yet', () => {
     expect(getCookies()).toStrictEqual({})
+  })
+
+  test('when there are duplicate cookies', () => {
+    document.cookie = 'c=one; path=/'
+    document.cookie = 'c=two; path=/test'
+    expect(getCookies()).toStrictEqual({ c: 'two' }) // 2nd (nested) cookie comes first...!
+    document.cookie = 'c=v; path=/test; expires=Thu, 01 Jan 1970 00:00:00 GMT'
   })
 
   // github.com/js-cookie/js-cookie/issues/196

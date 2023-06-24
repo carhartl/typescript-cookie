@@ -64,7 +64,7 @@ function get<T extends string | undefined, U>(
   while ((match = scan.exec(document.cookie)) != null) {
     try {
       const found = decodeName(match[1])
-      jar[found] = decodeValue(match[2], found)
+      if (!(found in jar)) jar[found] = decodeValue(match[2], found)
       if (name === found) {
         break
       }
