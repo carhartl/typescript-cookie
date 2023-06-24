@@ -8,7 +8,7 @@ export interface WellKnownCookieAttributes {
 
 export type CookieAttributes =
   | WellKnownCookieAttributes
-  | { [property: string]: string | undefined }
+  | { [property: string]: string | boolean | undefined }
 
 export type CookieAttributesConfig = Readonly<CookieAttributes>
 
