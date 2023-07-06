@@ -60,7 +60,7 @@ jobs:
       - name: Create coverage report
         # Third-party action, pin to commit SHA!
         # See https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions
-        uses: paambaati/codeclimate-action@5f637ccd517bc8960de0fe59379dd922bcba9486
+        uses: paambaati/codeclimate-action@9dea053ab1947f448753ac842b9980de2e44fe88
         env:
           CC_TEST_REPORTER_ID: cbe1ba43d6de77501997cd85b35dec2002f3a06db28fe46bc6ed10bc3d613111
         with:
